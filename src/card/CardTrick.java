@@ -17,11 +17,13 @@ import java.util.Scanner;
 public class CardTrick {
 
     private final Card[] magicHand;
+    private final Card luckyCard;
 
     // Constructor to initialize the magic hand with random cards
     public CardTrick() {
         magicHand = new Card[7];
         fillMagicHand();
+        luckyCard = new Card(7, "Spades");
     }
 
     // Method to fill the magic hand with random cards
@@ -38,6 +40,7 @@ public class CardTrick {
     // Method to ask the user to pick a card and search for it in the magic hand
     public void pickAndSearch() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("The lucky card is: " + luckyCard);
         System.out.print("Enter the value of your card (1-13): ");
         int value = scanner.nextInt();
         System.out.print("Enter the suit of your card (hearts, diamonds, clubs, spades): ");
